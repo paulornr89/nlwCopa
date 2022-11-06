@@ -1,14 +1,36 @@
+:root {
+    --card-background-color: #1D1C19;
+    --card-color-primary: #f7dd43;
+    --card-border-title-color-primary: #746615;
+    --background-image: url(../assets/background/bg-yellow.svg);
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #121214;
-  background-image: url(../assets/background/bg.svg);
-  background-position-x: center;
-  background-position-y: -715px;
+    background-color: #121214;
+    background-image: var(--background-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.blue{
+    --card-background-color: #202024;
+    --card-color-primary: #338AF3;
+    --card-border-title-color-primary: #338AF3;
+    --background-image: url(../assets/background/bg-blue.svg);
+}
+
+body.green{
+    --card-background-color: #1A1F1B;
+    --card-color-primary: #047C3F;
+    --card-border-title-color-primary: #047C3F;
+    --background-image: url(../assets/background/bg-green.svg);
 }
 
 body * {
@@ -30,12 +52,13 @@ header {
   flex-direction: column;
   gap: 32px;
 }
+
 .card {
-  background-color: #1d1c19;
+  background-color: var(--card-background-color);
   padding: 32px 23px;
   text-align: center;
   border-radius: 6px;
-  border-bottom: 2px solid #f7dd43;
+  border-bottom: 2px solid var(--card-color-primary);
 }
 
 .card h2 {
@@ -46,7 +69,7 @@ header {
   width: fit-content;
   margin-inline: auto;
 
-  border: 1px solid #746615;
+  border: 1px solid var(--card-border-title-color-primary);
   border-radius: 6px;
   margin-bottom: 53px;
   padding: 8px 16px;
@@ -89,4 +112,43 @@ header {
   font-size: 36px;
   line-height: 125%;
   color: #e1e1e6;
+}
+
+/*aumenta os objetos ao passar o mouse*/
+.card ul li strong:hover,
+.card ul li img:hover,
+.card h2:hover {
+    transform: scale(1.1);
+}
+
+/*dá um delay no efeito de aumentar os objetos*/
+.card ul li strong,
+.card ul li img,
+.card h2 {
+    transition: transform 0.3s;
+}
+
+/*usa a animação criada*/
+.card {
+    opacity: 0;
+    animation: appear 2s forwards;
+}
+/*criar animações*/
+@keyframes appear {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*aplica a partir de 700px pra cima*/
+@media (min-width: 700px) {
+    #cards {
+        max-width: 670px;/*limite para dois cartões*/
+        flex-direction: row;
+        flex-wrap: wrap;/*quebra os itens que estouram o tamanho em outra linha*/
+    }
 }
