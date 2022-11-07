@@ -148,8 +148,9 @@ header {
 /*aplica a partir de 700px pra cima*/
 @media (min-width: 700px) {
     #cards {
-        max-width: 670px;/*limite para dois cartões*/
+        max-width: 1400px;/*limite para dois cartões*/
         flex-direction: row;
         flex-wrap: wrap;/*quebra os itens que estouram o tamanho em outra linha*/
+        justify-content: center;
     }
 }
