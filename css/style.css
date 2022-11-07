@@ -122,6 +122,10 @@ header {
     transform: scale(1.1);
 }
 
+.card:hover {
+    transform: scale(1.05);
+}
+
 /*dá um delay no efeito de aumentar os objetos*/
 .card ul li strong,
 .card ul li img,
