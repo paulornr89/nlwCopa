@@ -11,7 +11,6 @@ function createGame(selecao1, horario, selecao2) {
 let delay = -0.4;
 function createCard(data, dia, games) {
   delay += 0.4;
-  console.log(delay)
   return `
     <div class="card" style="animation-delay: ${delay}s">
       <h2>${data} <span>${dia}</span></h2>
@@ -37,4 +36,14 @@ document.querySelector("#cards").innerHTML =
     createCard("01/12", "quinta", createGame("croatia", "12:00", "belgium") + createGame("canada", "12:00", "morocco") + createGame("japan", "16:00", "spain") + createGame("costa rica", "16:00", "germany")) + 
     createCard("02/12", "quinta", createGame("south korea", "12:00", "portugal") + createGame("ghana", "12:00", "uruguay") + createGame("serbia", "16:00", "switzerland") + createGame("cameroon", "16:00", "brazil")) 
   
+
+// const teste =  document.querySelectorAll("li img");
+// console.log(teste)
+for(let bandeira of document.querySelectorAll("li img")){
+ // console.log(bandeira)
+  bandeira.onclick = () => {
+      console.log("entrou")
+  }
+}
+ //teste.forEach.addEventListener("click", () => console.log("teste"))
 

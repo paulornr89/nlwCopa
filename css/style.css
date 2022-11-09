@@ -54,7 +54,7 @@ header {
   gap: 32px;
 }
 
-.card {
+.card {  
   background-color: var(--card-background-color);
   padding: 32px 23px;
   text-align: center;
@@ -136,7 +136,7 @@ header {
 /*usa a animação criada*/
 .card {
     opacity: 0;
-    animation: appear 2s forwards;
+    animation: appear 1s forwards;
 }
 /*criar animações*/
 @keyframes appear {
@@ -156,5 +156,9 @@ header {
         flex-direction: row;
         flex-wrap: wrap;/*quebra os itens que estouram o tamanho em outra linha*/
         justify-content: center;
+        gap: 10px;
+    }
+    .card {
+        transform: scale(0.8,0.8);
     }
 }
