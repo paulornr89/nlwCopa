@@ -1,9 +1,9 @@
 function createGame(selecao1, horario, selecao2) {
   return `
     <li>
-      <img src="./assets/Bandeiras dos países/icon=${selecao1}.svg" alt="Bandeira do Brasil"/>
+      <img src="./assets/Bandeiras dos países/icon=${selecao1}.svg" alt="${selecao1}"/>
       <strong>${horario}</strong>
-      <img src="./assets/Bandeiras dos países/icon=${selecao2}.svg" alt="Bandeira da Sérvia"/>
+      <img src="./assets/Bandeiras dos países/icon=${selecao2}.svg" alt="${selecao2}"/>
     </li>
   `
 }
@@ -37,13 +37,35 @@ document.querySelector("#cards").innerHTML =
     createCard("02/12", "quinta", createGame("south korea", "12:00", "portugal") + createGame("ghana", "12:00", "uruguay") + createGame("serbia", "16:00", "switzerland") + createGame("cameroon", "16:00", "brazil")) 
   
 
-// const teste =  document.querySelectorAll("li img");
-// console.log(teste)
+/**
+ * CAPTURA A BANDEIRA CLICADA
+ */
 for(let bandeira of document.querySelectorAll("li img")){
- // console.log(bandeira)
-  bandeira.onclick = () => {
-      console.log("entrou")
+ //console.log(bandeira)
+  bandeira.onclick = (e) => {
+    filtro(bandeira);
   }
 }
- //teste.forEach.addEventListener("click", () => console.log("teste"))
 
+
+function filtro(bandeiraFiltro){
+  const cards = document.querySelectorAll(".card");
+  console.log(cards)
+  for(j = 0; j < cards.length; j++){
+    const listaDeBandeiras1 = cards[j].querySelectorAll("li img:first-child");
+    const listaDeBandeiras2 = cards[j].querySelectorAll("li img~img");
+    let temBandeiraNoCard = false;
+    console.log(listaDeBandeiras1)
+    for(i = 0; i < listaDeBandeiras1.length; i++){
+      if(!((listaDeBandeiras1[i].alt != bandeiraFiltro.alt) && (listaDeBandeiras2[i].alt != bandeiraFiltro.alt))){
+        temBandeiraNoCard = true;
+        listaDeBandeiras1[i].closest("li").style.borderTop = "none";
+      }else{
+        listaDeBandeiras1[i].closest("li").style.display = "none";
+      }
+    }
+    if(!temBandeiraNoCard){
+      cards[j].style.display = "none";
+    }
+  }
+}
