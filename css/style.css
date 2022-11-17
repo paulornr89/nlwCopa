@@ -82,23 +82,34 @@ header {
   color: #e1e1e6;
   font-size: 14px;
   text-transform: uppercase;
+  width: fit-content;
 }
 
-.card li {
-  list-style-type: none;
+.card li div span {
+    color: #e1e1e6;
+    font-size: 8.5px;
+    text-transform: uppercase; 
+    margin-top: 10px;
+}
+
+.card li div {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card ul li {
+  list-style-type: none;  
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .card ul {
   display: flex;
   flex-direction: column;
   gap: 26.5px;
-
   width: 270px;
 }
 
@@ -122,8 +133,8 @@ header {
     transform: scale(1.1);
 }
 
-.card:hover {
-    transform: scale(1.05);
+#app .card:hover {
+    transform: scale(0.9);
 }
 
 /*dá um delay no efeito de aumentar os objetos*/
