@@ -56,6 +56,10 @@ header {
   color: #e1e1e6;
 }
 
+header img {
+  width: 350px;
+}
+
 #cards {
   display: flex;
   flex-direction: column;
