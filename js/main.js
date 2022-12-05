@@ -1,3 +1,9 @@
+const logo = document.querySelector('header img');
+
+logo.onclick = function(){
+  window.open("http://www.standermultimarcas.com.br/?fbclid=IwAR0pMKHXC2J9Fba0NE7c1c7xNVD-SNpS07_HxNGx25nWmF1OdfLdXAK0kGg", "_blank");
+}
+
 function createGame(selecao1, horario, selecao2, pais1, pais2) {
   return `
     <li>
@@ -15,19 +21,34 @@ function createGame(selecao1, horario, selecao2, pais1, pais2) {
 }
 
 let delay = -0.4;
-function createCard(data, dia, games) {
+function createCard(data, dia, games, fase) {
   delay += 0.4;
   return `
     <div class="card" style="animation-delay: ${delay}s">
-      <h2>${data} <span>${dia}</span></h2>
+      <h2>
+        <ul>
+          <li>${data} <span>${dia}</span></li>
+          <li><span class="fase">${fase}</span></li>
+        </ul>
+      </h2>
       <ul>
         ${games}
       </ul>
     </div>
   `
 }
-
+  
 document.querySelector("#cards").innerHTML =  
+createCard("05/12", "segunda", createGame("japan", "12:00", "croatia", "Japão", "Croácia") + createGame("brazil", "16:00", "south korea", "Brasil", "Coréia do Sul"),"Oitavas de Final") +
+createCard("06/12", "Terça", createGame("morocco", "12:00", "spain", "Marrocos", "Espanha") + createGame("portugal", "16:00", "switzerland", "Portugal", "Suíça"), "Oitavas de Final") +
+createCard("09/12", "Sexta", createGame("", "12:00", "", "", "") + createGame("netherlands", "16:00", "argentina", "Holanda", "Argentina"),"Quartas de Final") +
+createCard("10/12", "Sábado", createGame("", "12:00", "", "", "") + createGame("england", "16:00", "france", "Inglaterra", "França"),"Quartas de Final") +
+createCard("13/12", "Terça", createGame("", "16:00", "", "", ""), "Semifinal") +
+createCard("14/12", "Quarta", createGame("", "16:00", "", "", ""), "Semifinal") +
+createCard("17/12", "Sábado", createGame("", "12:00", "", "", ""), "Disputa Pelo Terceiro Lugar") +
+createCard("18/12", "Domingo", createGame("", "12:00", "", "", ""), "Final")
+/**
+ * Jogos primeira faze
     createCard("20/11", "domingo", createGame("qatar", "13:00", "ecuador", "Catar", "Equador")) +
     createCard("21/11", "segunda", createGame("england", "10:00", "iran", "Inglaterra", "Irã") + createGame("senegal", "13:00", "netherlands", "Senegal", "Holanda") + createGame("united states", "16:00", "wales", "Estados Unidos", "País de Gales")) +
     createCard("22/11", "terça", createGame("argentina", "07:00", "saudi arabia", "Argentina", "Arábia Saudita") + createGame("denmark", "10:00", "tunisia", "Dinamarca", "Tunísia") + createGame("mexico", "13:00", "poland", "México" , "Polônia") + createGame("france", "16:00", "australia", "França", "Austrália")) +
@@ -41,7 +62,7 @@ document.querySelector("#cards").innerHTML =
     createCard("30/11", "quarta", createGame("tunisia", "12:00", "france", "Tunísia", "França") + createGame("australia", "12:00", "denmark", "Austrália", "Dinamarca") + createGame("poland", "16:00", "argentina", "Polônia", "Argentina") + createGame("saudi arabia", "16:00", "mexico", "Arábia Saudita", "México")) +
     createCard("01/12", "quinta", createGame("croatia", "12:00", "belgium", "Croácia", "Bélgica") + createGame("canada", "12:00", "morocco", "Canadá", "Marrocos") + createGame("japan", "16:00", "spain", "Japão", "Espanha") + createGame("costa rica", "16:00", "germany", "Costa Rica", "Alemanha")) + 
     createCard("02/12", "quinta", createGame("south korea", "12:00", "portugal", "Coréia do Sul", "Portugal") + createGame("ghana", "12:00", "uruguay", "Gana", "Uruguai") + createGame("serbia", "16:00", "switzerland", "Sérvia", "Suíça") + createGame("cameroon", "16:00", "brazil", "Camarões", "Brasil")) 
-  
+   */
 
 /**
  * CAPTURA A BANDEIRA CLICADA
@@ -52,7 +73,6 @@ for(let bandeira of document.querySelectorAll("li img")){
     filtro(bandeira);
   }
 }
-
 /**
  * Mostra somente os jogos da seleção selecionada
  * @param {*} bandeiraFiltro 

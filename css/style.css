@@ -55,9 +55,14 @@ header {
   text-align: center;
   color: #e1e1e6;
 }
-
+/*Tamanho do logo*/
 header img {
   width: 350px;
+}
+
+header img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 #cards {
@@ -97,6 +102,19 @@ header img {
   width: fit-content;
 }
 
+.card .fase {
+  color: #047C3F;
+}
+
+/*Classe para ajuste do H2 considerando as fases finais*/
+.card h2 ul li {
+  list-style-type: none;  
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 15px;
+}
+
 .card li div span {
     color: #e1e1e6;
     font-size: 8.5px;
@@ -110,15 +128,16 @@ header img {
     flex-direction: column;
 }
 
-.card ul li {
+
+
+.card ul li:not(h2 ul li) {
   list-style-type: none;  
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
-.card ul {
+.card ul:not(h2 ul) {
   display: flex;
   flex-direction: column;
   gap: 26.5px;
@@ -126,7 +145,7 @@ header img {
 }
 
 /*Pega o li dentro do ul que tem um li anterior*/
-.card ul li + li {
+.card ul li + li:not(h2 ul li) {
   padding-top: 26.5px;
   border-top: 1px solid #323238;
 }
@@ -161,6 +180,7 @@ header img {
     opacity: 0;
     animation: appear 1s forwards;
 }
+
 /*criar animações*/
 @keyframes appear {
     0% {
