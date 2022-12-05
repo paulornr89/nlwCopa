@@ -60,9 +60,13 @@ header img {
   width: 350px;
 }
 
-header img:hover {
+header:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+header {
+  transition: transform 0.3s;
 }
 
 #cards {
