@@ -39,12 +39,12 @@ function createCard(data, dia, games, fase) {
 }
   
 document.querySelector("#cards").innerHTML =  
-createCard("03/12", "Sábado", createGame("netherlands", "12:00", "united states", "Holanda", "Estados Unidos") + createGame("argentina", "16:00", "australia", "Argentina", "Austrália"),"Oitavas de Final") +
-createCard("04/12", "Domingo", createGame("france", "12:00", "poland", "França", "Polônia") + createGame("england", "16:00", "senegal", "Inglaterra", "Senegal"),"Oitavas de Final") +
-createCard("05/12", "Segunda", createGame("japan", "12:00", "croatia", "Japão", "Croácia") + createGame("brazil", "16:00", "south korea", "Brasil", "Coréia do Sul"),"Oitavas de Final") +
-createCard("06/12", "Terça", createGame("morocco", "12:00", "spain", "Marrocos", "Espanha") + createGame("portugal", "16:00", "switzerland", "Portugal", "Suíça"), "Oitavas de Final") +
+// createCard("03/12", "Sábado", createGame("netherlands", "12:00", "united states", "Holanda", "Estados Unidos") + createGame("argentina", "16:00", "australia", "Argentina", "Austrália"),"Oitavas de Final") +
+// createCard("04/12", "Domingo", createGame("france", "12:00", "poland", "França", "Polônia") + createGame("england", "16:00", "senegal", "Inglaterra", "Senegal"),"Oitavas de Final") +
+// createCard("05/12", "Segunda", createGame("japan", "12:00", "croatia", "Japão", "Croácia") + createGame("brazil", "16:00", "south korea", "Brasil", "Coréia do Sul"),"Oitavas de Final") +
+// createCard("06/12", "Terça", createGame("morocco", "12:00", "spain", "Marrocos", "Espanha") + createGame("portugal", "16:00", "switzerland", "Portugal", "Suíça"), "Oitavas de Final") +
 createCard("09/12", "Sexta", createGame("croatia", "12:00", "brazil", "Croácia", "Brasil") + createGame("netherlands", "16:00", "argentina", "Holanda", "Argentina"),"Quartas de Final") +
-createCard("10/12", "Sábado", createGame("", "12:00", "", "", "") + createGame("england", "16:00", "france", "Inglaterra", "França"),"Quartas de Final") +
+createCard("10/12", "Sábado", createGame("morocco", "12:00", "portugal", "Marrocos", "Portugal") + createGame("england", "16:00", "france", "Inglaterra", "França"),"Quartas de Final") +
 createCard("13/12", "Terça", createGame("", "16:00", "", "", ""), "Semifinal") +
 createCard("14/12", "Quarta", createGame("", "16:00", "", "", ""), "Semifinal") +
 createCard("17/12", "Sábado", createGame("", "12:00", "", "", ""), "Disputa Pelo Terceiro Lugar") +
