@@ -45,10 +45,8 @@ document.querySelector("#cards").innerHTML =
 // createCard("06/12", "Terça", createGame("morocco", "12:00", "spain", "Marrocos", "Espanha") + createGame("portugal", "16:00", "switzerland", "Portugal", "Suíça"), "Oitavas de Final") +
 // createCard("09/12", "Sexta", createGame("croatia", "12:00", "brazil", "Croácia", "Brasil") + createGame("netherlands", "16:00", "argentina", "Holanda", "Argentina"),"Quartas de Final") +
 // createCard("10/12", "Sábado", createGame("morocco", "12:00", "portugal", "Marrocos", "Portugal") + createGame("england", "16:00", "france", "Inglaterra", "França"),"Quartas de Final") +
-createCard("13/12", "Terça", createGame("argentina", "16:00", "croatia", "Argentina", "Croácia"), "Semifinal") +
-createCard("14/12", "Quarta", createGame("france", "16:00", "morocco", "França", "Marrocos"), "Semifinal") +
-createCard("17/12", "Sábado", createGame("", "12:00", "", "", ""), "Disputa Pelo Terceiro Lugar") +
-createCard("18/12", "Domingo", createGame("", "12:00", "", "", ""), "Final")
+createCard("17/12", "Sábado", createGame("croatia", "12:00", "morocco", "Croácia", "Marrocos"), "Disputa Pelo Terceiro Lugar") +
+createCard("18/12", "Domingo", createGame("argentina", "12:00", "france", "Argentina", "França"), "Final")
 /**
  * Jogos primeira faze
     createCard("20/11", "domingo", createGame("qatar", "13:00", "ecuador", "Catar", "Equador")) +
